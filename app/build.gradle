@@ -7,7 +7,7 @@ android {
     buildToolsVersion '29.0.2'
 
     defaultConfig {
-        applicationId "info.ljungqvist.android.widget"
+        applicationId "com.sudhakar.android.widget"
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
@@ -29,6 +29,6 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
-    implementation 'io.github.microutils:kotlin-logging:1.6.24'
-    implementation 'sk.baka.slf4j:slf4j-handroid:1.7.27'
+//    implementation 'io.github.microutils:kotlin-logging:1.6.24'
+//    implementation 'sk.baka.slf4j:slf4j-handroid:1.7.27'
 }

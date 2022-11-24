@@ -14,16 +14,16 @@
  * limitations under the License.
  */
 
-package info.ljungqvist.android.activity
+package com.sudhakar.android.activity
 
 import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
 import android.widget.TextView
-import info.ljungqvist.android.widget.BuildConfig
-import info.ljungqvist.android.widget.CircularRangeSeekBar
-import info.ljungqvist.android.widget.R
+import com.sudhakar.android.widget.BuildConfig
+import com.sudhakar.android.widget.CircularRangeSeekBar
+import com.sudhakar.android.widget.R
 import kotlinx.android.synthetic.main.activity_test.*
 import mu.KLogging
 import org.slf4j.impl.HandroidLoggerAdapter
