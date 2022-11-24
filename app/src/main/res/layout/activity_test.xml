@@ -44,8 +44,8 @@
                 android:layout_width="220dp"
                 android:layout_height="220dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@drawable/circle" />
 
             <com.sudhakar.android.widget.CircularRangeSeekBar
@@ -58,7 +58,41 @@
                 android:drawSelectorOnTop="true" />
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
 
+            <Button
+                android:id="@+id/btnGreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                android:text="Green" />
+
+            <Button
+                android:id="@+id/btnBlue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/blue"
+                android:text="Blue" />
+
+            <Button
+                android:id="@+id/btnMegenta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/megenta"
+                android:text="Megenta" />
+
+            <Button
+                android:id="@+id/btnYellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/yellow"
+                android:text="Yellow" />
+
+        </LinearLayout>
     </LinearLayout>
 
 </ScrollView>
