@@ -20,20 +20,18 @@ import android.app.Activity
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import com.sudhakar.android.widget.BuildConfig
 import com.sudhakar.android.widget.CircularRangeSeekBar
 import com.sudhakar.android.widget.R
 import kotlinx.android.synthetic.main.activity_test.*
-import mu.KLogging
-import org.slf4j.impl.HandroidLoggerAdapter
+
 
 
 class TestActivity : Activity() {
+val TAG = "TestActivity"
 
-    init {
-        HandroidLoggerAdapter.DEBUG = BuildConfig.DEBUG;
-    }
 
     private val fromTextView by lazy { findViewById<TextView>(R.id.from) }
     private val toTextView by lazy { findViewById<TextView>(R.id.to) }
@@ -45,7 +43,7 @@ class TestActivity : Activity() {
         val bar: CircularRangeSeekBar = findViewById(R.id.circular_range_seek_bar_2)
 
         bar.seekBarChangeListener = CircularRangeSeekBar.OnSeekChangeListener{ _, p1, p2, fromUser ->
-            logger.debug { "$p1 - $p2, from user: $fromUser" }
+            Log.d(TAG, "$p1 - $p2, from user: $fromUser" )
             fromTextView.text = "From: $p1"
             toTextView.text = "To: $p2"
         }
@@ -53,7 +51,7 @@ class TestActivity : Activity() {
         imageView2.setImageDrawable(radialGradientDrawable())
     }
 
-    companion object : KLogging()
+
 
     // method to generate radial gradient drawable
     private fun radialGradientDrawable(): GradientDrawable {

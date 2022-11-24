@@ -8,17 +8,18 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.os.Build
-import androidx.annotation.DrawableRes
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.FrameLayout
 import android.widget.ImageView
-import mu.KLogging
-import mu.KotlinLogging
+import androidx.annotation.DrawableRes
 import kotlin.properties.Delegates
 
 class CircularRangeSeekBar : FrameLayout {
+
+    val TAG = "CircularRangeSeekBar"
 
     constructor(context: Context)
             : super(context)
@@ -159,7 +160,7 @@ class CircularRangeSeekBar : FrameLayout {
                     val dx = event.x - mid
                     val dy = event.y - mid
                     val rSq = dx * dx + dy * dy
-                    logger.debug { "r = ${Math.sqrt(rSq)}, outer = $mid, inner = $innerR" }
+                    Log.d(TAG, "r = ${Math.sqrt(rSq)}, outer = $mid, inner = $innerR" )
                     if (rSq < mid * mid && rSq > innerR * innerR) {
                         isPressed = true
                         if (sqDist(event.x, event.y, thumb1) <= sqDist(event.x, event.y, thumb2)) {
@@ -332,10 +333,9 @@ class CircularRangeSeekBar : FrameLayout {
 
         override fun onTouchEvent(event: MotionEvent): Boolean = false
 
-        private companion object : KLogging()
+
 
     }
 }
 
 
-private val logger = KotlinLogging.logger {}
