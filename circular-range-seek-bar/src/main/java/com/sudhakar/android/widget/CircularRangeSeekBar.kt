@@ -41,7 +41,7 @@ class CircularRangeSeekBar : FrameLayout {
     // The color of the progress ring
     private val arcPaint: Paint = Paint()
             .apply {
-                color = Color.parseColor("#ff33b5e5")
+                color = Color.parseColor("#cfcfcf")
                 isAntiAlias = true
                 strokeWidth = 5f
                 style = Paint.Style.STROKE
