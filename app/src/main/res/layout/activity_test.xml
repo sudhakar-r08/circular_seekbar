@@ -55,6 +55,7 @@
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clipChildren="false"
                 android:clipToPadding="false"
+                app:rangeSeekBarStyle="rangebar"
                 android:drawSelectorOnTop="true" />
         </RelativeLayout>
 
