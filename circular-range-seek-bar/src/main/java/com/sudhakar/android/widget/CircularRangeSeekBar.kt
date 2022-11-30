@@ -20,7 +20,12 @@ import kotlin.properties.Delegates
 
 class CircularRangeSeekBar : FrameLayout {
 
+
     private val DEFAULT_SEEKBAR_STYLE: Int = 0
+    private val DEFAULT_CIRCLE_COLOR = Color.GRAY
+    private val DEFAULT_CIRCLE_PROGRESS_COLOR = Color.DKGRAY
+    private var circleProgressColor: Int = DEFAULT_CIRCLE_PROGRESS_COLOR
+    private var circleColor: Int = DEFAULT_CIRCLE_COLOR
     val TAG = "CircularRangeSeekBar"
 
     constructor(context: Context)
@@ -58,6 +63,15 @@ class CircularRangeSeekBar : FrameLayout {
     private fun initAttributes(attrArray: TypedArray) {
         seekBarStyle =
             attrArray.getInt(R.styleable.RangeSeekBar_rangeSeekBarStyle, DEFAULT_SEEKBAR_STYLE)
+        circleProgressColor = attrArray.getColor(
+            R.styleable.RangeSeekBar_circle_progress_color,
+            DEFAULT_CIRCLE_PROGRESS_COLOR
+        )
+        circleColor =
+            attrArray.getColor(R.styleable.RangeSeekBar_circle_color, DEFAULT_CIRCLE_COLOR)
+
+        arcPaint.color = circleProgressColor
+        circlePaint.color = circleColor
         Log.d(TAG, "seekBarStyle initAttributes : $seekBarStyle")
     }
 
@@ -66,7 +80,7 @@ class CircularRangeSeekBar : FrameLayout {
     // The color of the progress ring
     private val arcPaint: Paint = Paint()
         .apply {
-            color = Color.parseColor("#ff33b5e5")
+            color = DEFAULT_CIRCLE_PROGRESS_COLOR
             isAntiAlias = true
             strokeWidth = 5f
             style = Paint.Style.STROKE
@@ -75,7 +89,7 @@ class CircularRangeSeekBar : FrameLayout {
     // The progress circle ring background
     private val circlePaint: Paint = Paint()
         .apply {
-            color = Color.GRAY
+            color = DEFAULT_CIRCLE_COLOR
             isAntiAlias = true
             strokeWidth = 5f
             style = Paint.Style.STROKE

@@ -55,8 +55,10 @@
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clipChildren="false"
                 android:clipToPadding="false"
-                app:rangeSeekBarStyle="rangebar"
-                android:drawSelectorOnTop="true" />
+                android:drawSelectorOnTop="true"
+                app:circle_progress_color="@android:color/black"
+                app:circle_color="@android:color/darker_gray"
+                app:rangeSeekBarStyle="rangebar" />
         </RelativeLayout>
 
         <LinearLayout
